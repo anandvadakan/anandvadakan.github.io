@@ -1,20 +1,44 @@
 .home {
   padding-top: 80px;
+  overflow-x: hidden;
+}
+
+/* ── Ambient glow behind hero ── */
+.hero-glow {
+  position: fixed;
+  top: -20%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61, 90, 128, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glow-drift 8s ease-in-out infinite alternate;
+}
+
+@keyframes glow-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-40px, 30px) scale(1.08); }
 }
 
 /* ── Hero ── */
 .hero {
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  padding: 7rem 3rem 4rem;
+  justify-content: center;
+  gap: 6rem;
+  padding: 7rem 4rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero__text {
-  max-width: 480px;
-  flex-shrink: 0;
+  max-width: 520px;
+  flex: 1;
 }
 
 .hero__card-col {
@@ -22,68 +46,155 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
+/* ── Badge ── */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(61, 90, 128, 0.08);
+  border: 1px solid rgba(61, 90, 128, 0.2);
+  border-radius: 100px;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  animation: fade-up 0.6s ease both;
+}
+
+.hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.7);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(74, 222, 128, 0.7); }
+  50%       { opacity: 0.6; box-shadow: 0 0 12px rgba(74, 222, 128, 0.4); }
+}
+
+/* ── Name ── */
 .hero__name {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
   margin-bottom: 1rem;
   color: var(--text-primary);
+  animation: fade-up 0.6s 0.1s ease both;
 }
 
+/* ── Animated role pill ── */
 .hero__roles {
+  margin-bottom: 1.75rem;
+  height: 2rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  animation: fade-up 0.6s 0.2s ease both;
 }
 
-.hero__dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--text-muted);
-  display: inline-block;
-  flex-shrink: 0;
+.hero__role-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(61, 90, 128, 0.1);
+  border: 1px solid rgba(61, 90, 128, 0.22);
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.hero__role-pill--in  { opacity: 1; transform: translateY(0); }
+.hero__role-pill--out { opacity: 0; transform: translateY(-6px); }
+
+/* ── Desc ── */
 .hero__desc {
   font-size: 1rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 0.75rem;
   max-width: 440px;
+  animation: fade-up 0.6s 0.3s ease both;
 }
 
+/* ── Stats row ── */
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.75rem 0;
+  animation: fade-up 0.6s 0.35s ease both;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero__stat-num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+}
+
+/* ── Actions ── */
 .hero__actions {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
   flex-wrap: wrap;
+  animation: fade-up 0.6s 0.4s ease both;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  padding: 0.65rem 1.4rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .btn--primary {
   background: var(--text-primary);
   color: var(--bg);
+  box-shadow: 0 2px 12px rgba(17, 18, 24, 0.18);
 }
 
 .btn--primary:hover {
   background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(17, 18, 24, 0.25);
 }
 
 .btn--ghost {
@@ -94,6 +205,13 @@
 .btn--ghost:hover {
   border-color: var(--text-muted);
   color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* ── Fade-up entry animation ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Case Studies Section ── */
@@ -104,6 +222,15 @@
   text-align: center;
   padding: 6rem 3rem 10rem;
   border-top: 1px solid var(--border);
+  position: relative;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.case-studies-section.cs--revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Meta copy */
@@ -126,7 +253,7 @@
 
 .cs-section__title {
   font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
   color: var(--text-primary);
@@ -167,7 +294,7 @@
   justify-content: center;
 }
 
-/* Override CardSwap's bottom-right anchor → center */
+/* Override CardSwap's bottom-right anchor -> center */
 .cs-section__swap-area .card-swap-container {
   position: relative !important;
   bottom: auto !important;
@@ -230,12 +357,20 @@
     align-items: flex-start;
     gap: 3rem;
     min-height: auto;
-    padding: 6rem 1.5rem 3rem;
+    padding: 6rem 2rem 3rem;
+    max-width: 100%;
   }
 
   .hero__card-col {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .hero-glow {
+    width: 400px;
+    height: 400px;
+    top: -10%;
+    right: -20%;
   }
 }
 
@@ -260,6 +395,10 @@
 @media (max-width: 480px) {
   .hero__name {
     font-size: 2.5rem;
+  }
+
+  .hero__stats {
+    gap: 1rem;
   }
 
   .cs-section__swap-area {
