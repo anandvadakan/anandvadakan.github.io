@@ -222,6 +222,24 @@ const MagicBento = ({
           const cls = `magic-bento-card ${textAutoHide ? 'magic-bento-card--text-autohide' : ''} ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''}`
           const style = { backgroundColor: card.color || '#0d1117', '--glow-color': glowColor, cursor: 'pointer' }
 
+          const cardInner = (
+            <>
+              <div className="mb-card__header">
+                <span className="mb-card__label" style={{ background: card.tagColor, color: card.accentColor }}>{card.label}</span>
+              </div>
+              {card.illustration && (
+                <div className="mb-card__illustration" aria-hidden="true">
+                  {card.illustration}
+                </div>
+              )}
+              <div className="mb-card__content">
+                <h3 className="mb-card__title">{card.title}</h3>
+                <p className="mb-card__desc">{card.description}</p>
+                <span className="mb-card__cta" style={{ color: card.accentColor || `rgba(${glowColor},1)` }}>Read case study -&gt;</span>
+              </div>
+            </>
+          )
+
           return enableStars ? (
             <ParticleCard
               key={card.slug}
@@ -235,25 +253,11 @@ const MagicBento = ({
               enableMagnetism={enableMagnetism}
               onClick={() => onCardClick?.(card.slug)}
             >
-              <div className="mb-card__header">
-                <span className="mb-card__label" style={{ background: card.tagColor, color: card.accentColor }}>{card.label}</span>
-              </div>
-              <div className="mb-card__content">
-                <h3 className="mb-card__title">{card.title}</h3>
-                <p className="mb-card__desc">{card.description}</p>
-                <span className="mb-card__cta" style={{ color: card.accentColor || `rgba(${glowColor},1)` }}>Read case study -&gt;</span>
-              </div>
+              {cardInner}
             </ParticleCard>
           ) : (
             <div key={card.slug} className={cls} style={style} onClick={() => onCardClick?.(card.slug)}>
-              <div className="mb-card__header">
-                <span className="mb-card__label" style={{ background: card.tagColor, color: card.accentColor }}>{card.label}</span>
-              </div>
-              <div className="mb-card__content">
-                <h3 className="mb-card__title">{card.title}</h3>
-                <p className="mb-card__desc">{card.description}</p>
-                <span className="mb-card__cta" style={{ color: card.accentColor || `rgba(${glowColor},1)` }}>Read case study -&gt;</span>
-              </div>
+              {cardInner}
             </div>
           )
         })}

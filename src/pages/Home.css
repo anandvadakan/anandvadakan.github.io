@@ -25,7 +25,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 7rem 4rem 5rem;
   max-width: 720px;
   margin: 0 auto;
@@ -37,6 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 
@@ -72,7 +72,7 @@
   50%       { opacity: 0.6; box-shadow: 0 0 12px rgba(74, 222, 128, 0.4); }
 }
 
-/* ── Name ── */
+/* ── Name (SplitText handles entry animation) ── */
 .hero__name {
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   font-weight: 700;
@@ -80,7 +80,6 @@
   line-height: 1.05;
   margin-bottom: 1rem;
   color: var(--text-primary);
-  animation: fade-up 0.6s 0.1s ease both;
 }
 
 /* ── Animated role pill ── */
@@ -89,7 +88,8 @@
   height: 2rem;
   display: flex;
   align-items: center;
-  animation: fade-up 0.6s 0.2s ease both;
+  justify-content: center;
+  animation: fade-up 0.6s 0.5s ease both;
 }
 
 .hero__role-pill {
@@ -118,16 +118,17 @@
   margin-bottom: 0.75rem;
   max-width: 540px;
   text-align: center;
-  animation: fade-up 0.6s 0.3s ease both;
+  animation: fade-up 0.6s 0.6s ease both;
 }
 
 /* ── Stats row ── */
 .hero__stats {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.5rem;
   margin: 1.75rem 0;
-  animation: fade-up 0.6s 0.35s ease both;
+  animation: fade-up 0.6s 0.75s ease both;
 }
 
 .hero__stat {
@@ -161,10 +162,11 @@
 /* ── Actions ── */
 .hero__actions {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
   flex-wrap: wrap;
-  animation: fade-up 0.6s 0.4s ease both;
+  animation: fade-up 0.6s 0.9s ease both;
 }
 
 .btn {

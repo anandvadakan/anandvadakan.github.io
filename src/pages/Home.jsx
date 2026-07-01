@@ -46,6 +46,58 @@ function useReveal() {
   return [ref, revealed]
 }
 
+const ILLUSTRATIONS = {
+  'gst-saas-strategy': (
+    <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Funnel / GTM pipeline */}
+      <path d="M20 20 L240 20 L190 55 L70 55 Z" fill="rgba(61,90,128,0.18)" stroke="rgba(122,163,200,0.25)" strokeWidth="1"/>
+      <path d="M70 62 L190 62 L160 97 L100 97 Z" fill="rgba(61,90,128,0.14)" stroke="rgba(122,163,200,0.2)" strokeWidth="1"/>
+      <path d="M100 104 L160 104 L145 118 L115 118 Z" fill="rgba(61,90,128,0.22)" stroke="rgba(122,163,200,0.3)" strokeWidth="1"/>
+      {/* Segment dots */}
+      <circle cx="70" cy="37" r="4" fill="rgba(122,163,200,0.5)"/>
+      <circle cx="130" cy="37" r="4" fill="rgba(122,163,200,0.35)"/>
+      <circle cx="190" cy="37" r="4" fill="rgba(122,163,200,0.25)"/>
+      {/* Arrow */}
+      <path d="M130 118 L130 128 M125 123 L130 128 L135 123" stroke="rgba(122,163,200,0.4)" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  ),
+  'funnel-optimization': (
+    <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Line chart with upward trend */}
+      <polyline points="20,95 60,80 100,70 130,50 165,35 200,18 240,10" stroke="rgba(122,163,200,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      <polyline points="20,95 60,80 100,70 130,50 165,35 200,18 240,10 240,110 20,110 Z" fill="rgba(61,90,128,0.1)"/>
+      {/* Grid lines */}
+      <line x1="20" y1="30" x2="240" y2="30" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+      <line x1="20" y1="60" x2="240" y2="60" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+      <line x1="20" y1="90" x2="240" y2="90" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+      {/* Highlight dots */}
+      <circle cx="100" cy="70" r="4" fill="rgba(122,163,200,0.5)" stroke="rgba(122,163,200,0.8)" strokeWidth="1.5"/>
+      <circle cx="200" cy="18" r="4" fill="rgba(122,163,200,0.6)" stroke="rgba(122,163,200,0.9)" strokeWidth="1.5"/>
+      {/* Label */}
+      <text x="205" y="14" fill="rgba(122,163,200,0.6)" fontSize="9" fontFamily="sans-serif">38%</text>
+    </svg>
+  ),
+  'ops-efficiency-model': (
+    <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* System nodes - delivery ops network */}
+      <circle cx="50" cy="60" r="18" fill="rgba(61,90,128,0.2)" stroke="rgba(122,163,200,0.3)" strokeWidth="1.5"/>
+      <circle cx="130" cy="30" r="14" fill="rgba(61,90,128,0.18)" stroke="rgba(122,163,200,0.25)" strokeWidth="1.5"/>
+      <circle cx="130" cy="90" r="14" fill="rgba(61,90,128,0.18)" stroke="rgba(122,163,200,0.25)" strokeWidth="1.5"/>
+      <circle cx="210" cy="60" r="18" fill="rgba(61,90,128,0.22)" stroke="rgba(122,163,200,0.35)" strokeWidth="1.5"/>
+      {/* Connections */}
+      <line x1="68" y1="52" x2="116" y2="36" stroke="rgba(122,163,200,0.3)" strokeWidth="1" strokeDasharray="4 3"/>
+      <line x1="68" y1="68" x2="116" y2="84" stroke="rgba(122,163,200,0.3)" strokeWidth="1" strokeDasharray="4 3"/>
+      <line x1="144" y1="36" x2="192" y2="52" stroke="rgba(122,163,200,0.3)" strokeWidth="1" strokeDasharray="4 3"/>
+      <line x1="144" y1="84" x2="192" y2="68" stroke="rgba(122,163,200,0.3)" strokeWidth="1" strokeDasharray="4 3"/>
+      {/* Icons inside nodes */}
+      <text x="41" y="64" fill="rgba(122,163,200,0.6)" fontSize="14" fontFamily="sans-serif">🏪</text>
+      <text x="122" y="34" fill="rgba(122,163,200,0.6)" fontSize="11" fontFamily="sans-serif">🛵</text>
+      <text x="122" y="94" fill="rgba(122,163,200,0.6)" fontSize="11" fontFamily="sans-serif">📦</text>
+      <text x="201" y="64" fill="rgba(122,163,200,0.6)" fontSize="14" fontFamily="sans-serif">🧑</text>
+    </svg>
+  ),
+}
+
 const bentoCards = caseStudies.map(cs => ({
   slug: cs.slug,
   label: cs.tag,
@@ -54,6 +106,7 @@ const bentoCards = caseStudies.map(cs => ({
   tagColor: cs.tagColor,
   accentColor: cs.accentColor,
   color: '#0d1117',
+  illustration: ILLUSTRATIONS[cs.slug] ?? null,
 }))
 
 export default function Home() {
