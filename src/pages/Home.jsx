@@ -31,50 +31,47 @@ export default function Home() {
       </section>
 
       <section className="case-studies-section">
-        <div className="cs-section__top">
-          <div className="cs-section__meta">
-            <p className="cs-section__label">Selected Work</p>
-            <h2 className="cs-section__title">Case Studies</h2>
-            <p className="cs-section__desc">
-              Real engagements. Measurable outcomes. Each project tackles a specific growth or operations challenge from first principles.
-            </p>
-            <Link to="/works" className="cs-section__link">
-              View all works <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-
-          <div className="cs-section__swap-area">
-            <CardSwap
-              width={360}
-              height={280}
-              cardDistance={58}
-              verticalDistance={64}
-              delay={4000}
-              pauseOnHover
-              skewAmount={5}
-              easing="elastic"
-            >
-              {caseStudies.map((cs) => (
-                <Card key={cs.slug} customClass="case-card">
-                  <Link to={`/works/${cs.slug}`} className="case-card__inner">
-                    <span
-                      className="case-card__tag"
-                      style={{ background: cs.tagColor, color: cs.accentColor }}
-                    >
-                      {cs.tag}
-                    </span>
-                    <h3 className="case-card__title">{cs.title}</h3>
-                    <p className="case-card__sub">{cs.subtitle}</p>
-                    <span className="case-card__cta" style={{ color: cs.accentColor }}>
-                      Read case study →
-                    </span>
-                  </Link>
-                </Card>
-              ))}
-            </CardSwap>
-          </div>
+        <div className="cs-section__meta">
+          <p className="cs-section__label">Selected Work</p>
+          <h2 className="cs-section__title">Case Studies</h2>
+          <p className="cs-section__desc">
+            Real engagements. Measurable outcomes. Each project tackles a specific growth or operations challenge from first principles.
+          </p>
+          <Link to="/works" className="cs-section__link">
+            View all works <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
+        <div className="cs-section__swap-area">
+          <CardSwap
+            width={380}
+            height={300}
+            cardDistance={60}
+            verticalDistance={68}
+            delay={4000}
+            pauseOnHover
+            skewAmount={5}
+            easing="elastic"
+          >
+            {caseStudies.map((cs) => (
+              <Card key={cs.slug} customClass="case-card">
+                <Link to={`/works/${cs.slug}`} className="case-card__inner">
+                  <span
+                    className="case-card__tag"
+                    style={{ background: cs.tagColor, color: cs.accentColor }}
+                  >
+                    {cs.tag}
+                  </span>
+                  <h3 className="case-card__title">{cs.title}</h3>
+                  <p className="case-card__sub">{cs.subtitle}</p>
+                  <span className="case-card__cta" style={{ color: cs.accentColor }}>
+                    Read case study →
+                  </span>
+                </Link>
+              </Card>
+            ))}
+          </CardSwap>
+        </div>
       </section>
     </main>
   )
