@@ -77,6 +77,23 @@ const ILLUSTRATIONS = {
       <path d="M130 118 L130 128 M125 123 L130 128 L135 123" stroke="rgba(122,163,200,0.85)" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   ),
+  'organic-food-gtm': (
+    <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Leaf / organic growth */}
+      <path d="M130 100 Q80 80 70 40 Q100 20 140 30 Q170 40 160 80 Q150 95 130 100Z" fill="rgba(58,125,68,0.35)" stroke="rgba(100,180,100,0.8)" strokeWidth="1.5"/>
+      <path d="M130 100 Q120 70 125 35" stroke="rgba(100,180,100,0.7)" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M125 55 Q105 50 95 38" stroke="rgba(100,180,100,0.55)" strokeWidth="1" strokeLinecap="round"/>
+      <path d="M127 72 Q110 68 100 58" stroke="rgba(100,180,100,0.45)" strokeWidth="1" strokeLinecap="round"/>
+      {/* Growth arrow */}
+      <polyline points="30,95 65,78 100,68 130,100" stroke="rgba(58,125,68,0)" strokeWidth="0"/>
+      <polyline points="168,85 190,60 215,38 235,20" stroke="rgba(100,180,100,0.65)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M225 18 L235 20 L233 30" stroke="rgba(100,180,100,0.65)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Dots */}
+      <circle cx="168" cy="85" r="3.5" fill="rgba(100,180,100,0.7)"/>
+      <circle cx="215" cy="38" r="3.5" fill="rgba(100,180,100,0.85)"/>
+      <circle cx="235" cy="20" r="3.5" fill="rgba(100,180,100,0.95)"/>
+    </svg>
+  ),
   'ops-efficiency-model': (
     <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* System nodes - delivery ops network */}
@@ -211,7 +228,11 @@ export default function Home() {
         <div className="cs-section__bento">
           <MagicBento
             cards={bentoCards}
-            onCardClick={slug => navigate(`/works/${slug}`)}
+            onCardClick={slug => {
+              const cs = caseStudies.find(c => c.slug === slug)
+              if (cs?.externalUrl) window.open(cs.externalUrl, '_blank', 'noopener,noreferrer')
+              else navigate(`/works/${slug}`)
+            }}
             enableStars={true}
             enableSpotlight={true}
             enableBorderGlow={true}

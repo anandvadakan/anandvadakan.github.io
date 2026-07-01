@@ -15,22 +15,27 @@ export default function Works() {
 
       <div className="works__grid">
         {caseStudies.map((cs, i) => (
-          <Link to={`/works/${cs.slug}`} key={cs.slug} className="work-card">
-            <div className="work-card__num">{String(i + 1).padStart(2, '0')}</div>
-            <div className="work-card__body">
-              <span
-                className="work-card__tag"
-                style={{ background: cs.tagColor, color: cs.accentColor }}
-              >
-                {cs.tag}
-              </span>
-              <h2 className="work-card__title">{cs.title}</h2>
-              <p className="work-card__summary">{cs.summary}</p>
-              <span className="work-card__link" style={{ color: cs.accentColor }}>
-                Read case study →
-              </span>
-            </div>
-          </Link>
+          cs.externalUrl ? (
+            <a href={cs.externalUrl} target="_blank" rel="noopener noreferrer" key={cs.slug} className="work-card">
+              <div className="work-card__num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="work-card__body">
+                <span className="work-card__tag" style={{ background: cs.tagColor, color: cs.accentColor }}>{cs.tag}</span>
+                <h2 className="work-card__title">{cs.title}</h2>
+                <p className="work-card__summary">{cs.summary}</p>
+                <span className="work-card__link" style={{ color: cs.accentColor }}>Read on Medium →</span>
+              </div>
+            </a>
+          ) : (
+            <Link to={`/works/${cs.slug}`} key={cs.slug} className="work-card">
+              <div className="work-card__num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="work-card__body">
+                <span className="work-card__tag" style={{ background: cs.tagColor, color: cs.accentColor }}>{cs.tag}</span>
+                <h2 className="work-card__title">{cs.title}</h2>
+                <p className="work-card__summary">{cs.summary}</p>
+                <span className="work-card__link" style={{ color: cs.accentColor }}>Read case study →</span>
+              </div>
+            </Link>
+          )
         ))}
       </div>
     </main>

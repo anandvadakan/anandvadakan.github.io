@@ -34,6 +34,16 @@ export const caseStudies = [
     tagColor: '#a8dadc',
   },
   {
+    slug: 'organic-food-gtm',
+    tag: 'GTM',
+    title: 'Organic Food Brand GTM',
+    subtitle: 'Why most organic food brands fail in India - and how to build one that doesn\'t',
+    externalUrl: 'https://medium.com/@anandvadakan2000/why-most-organic-food-brands-fail-in-india-before-they-even-start-how-id-build-one-806da05acb5b',
+    summary: 'A ground-up GTM strategy for launching an organic food brand in India - covering positioning, channel selection, and the structural mistakes that kill most brands before they reach scale.',
+    accentColor: '#3a7d44',
+    tagColor: '#d4edda',
+  },
+  {
     slug: 'ops-efficiency-model',
     tag: 'Operations',
     title: 'Ops Efficiency Model',
