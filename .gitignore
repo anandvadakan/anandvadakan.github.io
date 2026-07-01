@@ -1,4 +1,5 @@
 node_modules
+public/anand.jpg
 dist
 .env
 .env.local

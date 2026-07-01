@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CardSwap, { Card } from '../components/CardSwap'
 import ContactModal from '../components/ContactModal'
+import ProfileCard from '../components/ProfileCard'
 import { caseStudies } from '../data/caseStudies'
 import './Home.css'
 
@@ -32,6 +33,24 @@ export default function Home() {
               Get in touch
             </button>
           </div>
+        </div>
+
+        <div className="hero__card-col">
+          <ProfileCard
+            avatarUrl="/anand.jpg"
+            name="Anand V"
+            title="GTM Engineer"
+            handle="anandvadakan"
+            status="Open to work"
+            contactText="Connect"
+            showUserInfo={true}
+            enableTilt={true}
+            enableMobileTilt={false}
+            behindGlowEnabled={true}
+            behindGlowColor="rgba(61, 90, 128, 0.45)"
+            innerGradient="linear-gradient(160deg, #1a2236 0%, #0d1117 60%, #111828 100%)"
+            onContactClick={() => setShowContact(true)}
+          />
         </div>
       </section>
 
