@@ -1,17 +1,35 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
 export default function Contact() {
+  const formRef = useRef(null)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setStatus('sending')
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
+      setStatus('success')
+      setForm({ name: '', email: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -23,12 +41,12 @@ export default function Contact() {
         </p>
       </div>
 
-      {sent ? (
+      {status === 'success' ? (
         <div className="contact__success">
           <p>Thanks for reaching out. I'll get back to you shortly.</p>
         </div>
       ) : (
-        <form className="contact__form" onSubmit={handleSubmit}>
+        <form ref={formRef} className="contact__form" onSubmit={handleSubmit}>
           <div className="form-field">
             <label htmlFor="name">Name</label>
             <input
@@ -68,7 +86,17 @@ export default function Contact() {
             />
           </div>
 
-          <button type="submit" className="contact__submit">Send message</button>
+          {status === 'error' && (
+            <p className="contact__error">Something went wrong. Please try again.</p>
+          )}
+
+          <button
+            type="submit"
+            className="contact__submit"
+            disabled={status === 'sending'}
+          >
+            {status === 'sending' ? 'Sending…' : 'Send message'}
+          </button>
         </form>
       )}
     </main>
