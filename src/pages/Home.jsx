@@ -75,26 +75,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="case-grid">
-          {caseStudies.map((cs, i) => (
-            <Link to={`/works/${cs.slug}`} key={cs.slug} className="case-tile">
-              <div className="case-tile__top">
-                <span
-                  className="case-tile__tag"
-                  style={{ background: cs.tagColor, color: cs.accentColor }}
-                >
-                  {cs.tag}
-                </span>
-                <span className="case-tile__num">{String(i + 1).padStart(2, '0')}</span>
-              </div>
-              <h3 className="case-tile__title">{cs.title}</h3>
-              <p className="case-tile__sub">{cs.subtitle}</p>
-              <div className="case-tile__footer">
-                <span className="case-tile__arrow" style={{ color: cs.accentColor }}>→</span>
-              </div>
-            </Link>
-          ))}
-        </div>
       </section>
     </main>
   )
