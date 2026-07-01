@@ -93,7 +93,7 @@ export default function Home() {
               to={{ opacity: 1, y: 0, rotationX: 0 }}
               threshold={0.1}
               rootMargin="0px"
-              textAlign="left"
+              textAlign="center"
             />
 
             <p className="hero__roles">
