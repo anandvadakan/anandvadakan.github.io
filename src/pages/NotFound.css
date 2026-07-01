@@ -1,0 +1,70 @@
+.nf {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.nf__bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+}
+
+.nf__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.nf__code {
+  font-size: clamp(5rem, 18vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--text-primary);
+  opacity: 0.08;
+  user-select: none;
+  margin-bottom: -0.5rem;
+}
+
+.nf__title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.nf__desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.nf__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1.4rem;
+  background: var(--text-primary);
+  color: var(--bg);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nf__home:hover {
+  background: #1e2433;
+}
