@@ -70,22 +70,22 @@ const ILLUSTRATIONS = {
   ),
   'delay-accountability': (
     <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Clock face */}
-      <circle cx="130" cy="60" r="48" fill="rgba(61,90,128,0.2)" stroke="rgba(122,163,200,0.55)" strokeWidth="1.5"/>
-      {/* Restaurant slice - warm red, top-right */}
-      <path d="M130 60 L130 14 A46 46 0 0 1 169 83 Z" fill="rgba(180,80,80,0.3)" stroke="rgba(200,100,100,0.5)" strokeWidth="1"/>
-      {/* Platform slice - blue, top-left */}
-      <path d="M130 60 L130 14 A46 46 0 0 0 91 83 Z" fill="rgba(61,90,128,0.45)" stroke="rgba(122,163,200,0.6)" strokeWidth="1"/>
-      {/* External slice - grey, bottom */}
-      <path d="M130 60 L91 83 A46 46 0 0 0 169 83 Z" fill="rgba(80,80,100,0.3)" stroke="rgba(140,140,170,0.45)" strokeWidth="1"/>
-      {/* Clock hands */}
-      <line x1="130" y1="60" x2="130" y2="25" stroke="rgba(200,220,240,0.9)" strokeWidth="2.5" strokeLinecap="round"/>
-      <line x1="130" y1="60" x2="155" y2="72" stroke="rgba(200,220,240,0.7)" strokeWidth="1.8" strokeLinecap="round"/>
-      <circle cx="130" cy="60" r="3.5" fill="rgba(200,220,240,0.95)"/>
-      {/* Labels */}
-      <text x="148" y="38" fill="rgba(220,130,130,0.9)" fontSize="8.5" fontFamily="sans-serif" fontWeight="600">REST</text>
-      <text x="98" y="38" fill="rgba(122,163,200,0.9)" fontSize="8.5" fontFamily="sans-serif" fontWeight="600">PLAT</text>
-      <text x="116" y="108" fill="rgba(160,160,190,0.8)" fontSize="8.5" fontFamily="sans-serif" fontWeight="600">EXT</text>
+      {/* Donut - Restaurant ~40%, top-right, red */}
+      <path d="M130 18 A42 42 0 0 1 166 81" stroke="rgba(200,90,90,0.85)" strokeWidth="12" strokeLinecap="butt" fill="none"/>
+      {/* Donut - Platform ~40%, top-left, blue */}
+      <path d="M130 18 A42 42 0 0 0 94 81" stroke="rgba(80,120,180,0.85)" strokeWidth="12" strokeLinecap="butt" fill="none"/>
+      {/* Donut - External ~20%, bottom, grey */}
+      <path d="M94 81 A42 42 0 0 0 166 81" stroke="rgba(120,120,150,0.7)" strokeWidth="12" strokeLinecap="butt" fill="none"/>
+      {/* Inner donut hole */}
+      <circle cx="130" cy="60" r="28" fill="#0d1117"/>
+      {/* Leader lines */}
+      <line x1="154" y1="32" x2="178" y2="18" stroke="rgba(200,90,90,0.5)" strokeWidth="1"/>
+      <line x1="106" y1="32" x2="82" y2="18" stroke="rgba(80,120,180,0.5)" strokeWidth="1"/>
+      <line x1="130" y1="102" x2="130" y2="115" stroke="rgba(120,120,150,0.5)" strokeWidth="1"/>
+      {/* Labels outside */}
+      <text x="180" y="20" fill="rgba(220,110,110,0.9)" fontSize="8.5" fontFamily="sans-serif" fontWeight="700">RESTAURANT</text>
+      <text x="22" y="20" fill="rgba(100,150,220,0.9)" fontSize="8.5" fontFamily="sans-serif" fontWeight="700">PLATFORM</text>
+      <text x="105" y="119" fill="rgba(150,150,180,0.85)" fontSize="8.5" fontFamily="sans-serif" fontWeight="700">EXTERNAL</text>
     </svg>
   ),
   'organic-food-gtm': (
