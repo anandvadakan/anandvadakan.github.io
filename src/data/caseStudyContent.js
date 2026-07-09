@@ -135,8 +135,8 @@ This case study proposes two interconnected systems - FlexCancel (a time-staged 
     title: 'Designing Accountability into Delays',
     hook: 'The delivery partner got a 1-star review for a delay caused by the restaurant. No platform has fixed this.',
     tag: 'Operations',
-    accentColor: '#1d3557',
-    tagColor: '#a8dadc',
+    accentColor: '#2d6a4f',
+    tagColor: '#d8f3dc',
 
     shortForm: `When food arrives late, the customer is angry. They leave a one-star review. The delivery partner receives it. But the delivery partner was waiting outside the restaurant for 22 minutes while the kitchen ran behind. They had nothing to do with the delay.
 

@@ -35,21 +35,4 @@ export const caseStudies = [
     ],
     outcome: 'The framework separates the question of "who caused the delay" from "who gets penalised for it" - a distinction the current system collapses entirely. Delivery partners are shielded from ratings damage for delays outside their control, which reduces churn in the highest-cost segment of the labour pool. Restaurants with chronic prep-time overruns are surfaced through the reliability score, allowing the platform to intervene operationally or adjust demand. The platform gains a structured audit trail for delay disputes that replaces the current default-deny approach to partner complaints.',
   },
-  {
-    slug: 'organic-food-gtm',
-    tag: 'GTM',
-    title: 'Organic Food Brand GTM',
-    subtitle: 'Why most organic food brands fail in India - and how to build one that doesn\'t',
-    externalUrl: 'https://medium.com/@anandvadakan2000/why-most-organic-food-brands-fail-in-india-before-they-even-start-how-id-build-one-806da05acb5b',
-    summary: 'A ground-up GTM strategy for launching an organic food brand in India - covering positioning, channel selection, and the structural mistakes that kill most brands before they reach scale.',
-    problem: 'Most organic food brands in India fail before they reach meaningful scale. The common failure pattern is not product quality - it is a misread of the market structure. Founders enter assuming that "organic" is a sufficient differentiator, price at a premium the market cannot yet absorb outside a narrow urban cohort, and distribute through channels (modern trade, e-commerce) that require marketing spend they cannot sustain. The result is a brand that burns cash on acquisition, converts poorly because the trust infrastructure for organic claims does not exist in India the way it does in Western markets, and cannot find a path to unit-economics that work below a price point most households will not pay.',
-    approach: [
-      'Segment the addressable market by willingness-to-pay and existing trust in organic claims - distinguishing the "certified organic" buyer (small, premium, urban) from the "clean label" buyer (larger, price-sensitive, open to natural/less-processed framing) and building the GTM around the second segment first',
-      'Lead with a D2C channel to control the narrative, collect first-party purchase data, and build direct relationships with early adopters - using this cohort to generate social proof before expanding to retail',
-      'Delay modern trade (supermarkets, organised retail) until the brand has a proven conversion story - modern trade shelf space is expensive to buy and maintain, and organic brands without established consumer pull burn margin on slotting fees and promotions',
-      'Build trust through transparency rather than certification alone - certification marks are not well understood by most Indian consumers, but ingredient origin stories, farm-level content, and visible sourcing are legible and shareable',
-      'Price the anchor SKU at mass-premium (15-25% above category average, not 60-80%) to maximise trial volume from the clean-label segment, then introduce a certified-organic premium tier once the brand has earned credibility',
-    ],
-    outcome: 'The strategy inverts the typical launch sequence. Instead of spending on brand awareness before proving conversion, it uses D2C as a low-cost laboratory to find the product-market fit and unit economics before committing to distribution at scale. The clean-label positioning broadens the addressable market without abandoning the long-term organic story - it is a wedge, not a pivot. The phased channel approach (D2C first, quick commerce second, organised retail third) maps spend to the stage of brand maturity, reducing the cash burn that kills most category entrants.',
-  },
 ]
