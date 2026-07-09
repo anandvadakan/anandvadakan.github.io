@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Works from './pages/Works'
 import Contact from './pages/Contact'
@@ -22,6 +23,7 @@ export default function App() {
         SPLAT_RADIUS={0.18}
         CURL={4}
       />
+      <ScrollToTop />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
