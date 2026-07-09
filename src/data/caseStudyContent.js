@@ -207,47 +207,4 @@ The result is a system where every stakeholder's incentive is aligned with the o
       abTest: { title: 'A/B Test Design', coming: true, sections: [] },
     },
   },
-
-  {
-    slug: 'organic-food-brand',
-    title: 'Organic Food Brand GTM',
-    hook: 'Most organic food brands in India fail before they reach scale. The problem is not the product.',
-    tag: 'GTM',
-    accentColor: '#3a7d44',
-    tagColor: '#d4edda',
-
-    shortForm: `Most organic food brands in India fail before they reach meaningful scale. The common failure pattern is not product quality - it is a misread of the market structure.
-
-Founders enter assuming that "organic" is a sufficient differentiator, price at a premium the market cannot yet absorb outside a narrow urban cohort, and distribute through channels that require marketing spend they cannot sustain. The result is a brand that burns cash on acquisition, converts poorly, and cannot find a path to unit economics that work.
-
-This case study builds a ground-up GTM strategy for launching an organic food brand in India - covering how to segment the market correctly (the "certified organic" buyer is not the primary target), which channel to lead with and why, how to price the anchor SKU to maximise trial without abandoning long-term positioning, and how to sequence channel expansion as the brand earns credibility.
-
-The core argument: the sequencing of channels and the framing of trust matter more than the product itself in the first 18 months.`,
-
-    fullForm: [
-      { type: 'heading', text: 'Organic Food Brand GTM' },
-      { type: 'subheading', text: "Why most organic food brands fail in India - and how to build one that doesn't" },
-      { type: 'text', text: "Most organic food brands in India fail before they reach meaningful scale. The common failure pattern is not product quality - it is a misread of the market structure. Founders enter assuming that 'organic' is a sufficient differentiator, price at a premium the market cannot yet absorb outside a narrow urban cohort, and distribute through channels (modern trade, e-commerce) that require marketing spend they cannot sustain." },
-      { type: 'heading', text: 'The Market Segmentation Error' },
-      { type: 'text', text: "The 'certified organic' buyer is small - premium, urban, already converted. The larger opportunity is the 'clean label' buyer: price-sensitive, open to natural and less-processed framing, and not yet committed to a specific brand. Most GTM strategies target the first segment and build everything around it. This is a mistake when you are trying to reach scale.\n\nThe correct first move is to build the GTM around the clean-label segment and use that cohort to generate the proof and distribution footprint needed to eventually reach the certified-organic buyer." },
-      { type: 'heading', text: 'Channel Strategy' },
-      { type: 'text', text: 'D2C first. D2C controls the narrative, collects first-party purchase data, and builds direct relationships with early adopters. This cohort generates social proof before the brand expands to retail.' },
-      { type: 'text', text: 'Delay modern trade. Modern trade shelf space is expensive to buy and maintain. Organic brands without established consumer pull burn margin on slotting fees and promotions. Enter only once the brand has a proven conversion story.' },
-      { type: 'text', text: 'Quick commerce as the bridge. After D2C establishes the brand, quick commerce platforms (Blinkit, Zepto, Swiggy Instamart) offer reach and discovery without the capital intensity of modern trade. They also surface purchase data by neighbourhood that informs the eventual retail expansion.' },
-      { type: 'heading', text: 'Pricing the Anchor SKU' },
-      { type: 'text', text: "Price the anchor SKU at mass-premium - 15-25% above the category average, not 60-80%. The 60-80% premium is the certified-organic segment's price point. The clean-label buyer will not cross that gap on first trial.\n\nOnce the brand has credibility and repeat purchasers, introduce a certified-organic premium tier. The first tier earns the right to offer the second." },
-      { type: 'heading', text: 'Building Trust Without Relying on Certification' },
-      { type: 'text', text: "Certification marks are not well understood by most Indian consumers - they carry weight with the converted organic buyer but mean little to the clean-label buyer.\n\nTrust for this segment is built through transparency: ingredient origin stories, farm-level content, visible sourcing. These are legible, shareable, and do not require the consumer to understand a certification body. They also travel on social media in a way that 'certified by FSSAI' does not." },
-      { type: 'heading', text: 'The Sequencing Logic' },
-      { type: 'text', text: "The strategy inverts the typical launch sequence. Instead of spending on brand awareness before proving conversion, it uses D2C as a low-cost laboratory to find product-market fit and unit economics before committing to distribution at scale.\n\nThe clean-label positioning broadens the addressable market without abandoning the long-term organic story - it is a wedge, not a pivot. The phased channel approach (D2C first, quick commerce second, organised retail third) maps spend to the stage of brand maturity, reducing the cash burn that kills most category entrants." },
-      { type: 'divider' },
-      { type: 'closing', text: "These case studies were built without access to internal data, engineering resources, or a product team. What I had was a clear view of where systems were misaligned, who was absorbing costs they shouldn't, and what a structurally correct solution could look like." },
-    ],
-
-    execution: {
-      brd: { title: 'Business Requirements Document', coming: true, sections: [] },
-      frd: { title: 'Functional Requirements Document', coming: true, sections: [] },
-      abTest: { title: 'A/B Test Design', coming: true, sections: [] },
-    },
-  },
 ]
