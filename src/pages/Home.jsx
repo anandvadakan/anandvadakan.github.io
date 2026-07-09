@@ -191,7 +191,7 @@ export default function Home() {
               </div>
               <div className="hero__stat-divider" />
               <div className="hero__stat">
-                <span className="hero__stat-num">GTM</span>
+                <span className="hero__stat-num">Business</span>
                 <span className="hero__stat-label">Strategy</span>
               </div>
               <div className="hero__stat-divider" />
