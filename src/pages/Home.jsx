@@ -181,7 +181,7 @@ export default function Home() {
               Turning ambiguous business problems into structured requirements and decisions.
             </p>
             <p className="hero__desc hero__desc--secondary">
-              Strategy.
+              Strategy, AI workflows, and ops efficiency - built from first principles.
             </p>
 
             <div className="hero__stats">
