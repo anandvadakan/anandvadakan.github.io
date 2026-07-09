@@ -34,6 +34,17 @@ function StandardCaseStudy({ cs }) {
         <h2 className="cs__section-title">Outcome</h2>
         <p>{cs.outcome}</p>
       </section>
+      {cs.externalUrl && (
+        <a
+          href={cs.externalUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cs__medium-link"
+          style={{ borderColor: cs.accentColor, color: cs.accentColor }}
+        >
+          Full original writeup on Medium →
+        </a>
+      )}
     </div>
   )
 }

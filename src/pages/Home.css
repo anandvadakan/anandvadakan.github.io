@@ -127,6 +127,11 @@
   margin-bottom: 0;
 }
 
+.hero__desc--secondary {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
 /* ── Stats ── */
 .hero__stats {
   display: flex;

@@ -7,7 +7,7 @@ import ContactModal from '../components/ContactModal'
 import { caseStudies } from '../data/caseStudies'
 import './Home.css'
 
-const ROLES = ['GTM Engineer', 'Strategy', 'AI Workflow']
+const ROLES = ['Business Analyst', 'Product Analyst', 'AI Workflows']
 
 function AnimatedRoles() {
   const [idx, setIdx] = useState(0)
@@ -178,10 +178,10 @@ export default function Home() {
             </p>
 
             <p className="hero__desc">
-              Turning complex go-to-market challenges into clean, scalable systems.
+              Turning ambiguous business problems into structured requirements and decisions.
             </p>
-            <p className="hero__desc">
-              GTM strategy, AI workflows, ops efficiency - built from first principles.
+            <p className="hero__desc hero__desc--secondary">
+              GTM strategy, AI workflows, and ops efficiency - built from first principles.
             </p>
 
             <div className="hero__stats">
@@ -230,7 +230,7 @@ export default function Home() {
             textAlign="center"
           />
           <p className="cs-section__desc">
-            Real engagements. Measurable outcomes. Each project tackles a specific growth or operations challenge from first principles.
+            Self-directed case studies - structured problem-to-system thinking, built independently.
           </p>
           <Link to="/works" className="cs-section__link">
             View all works <span aria-hidden="true">-&gt;</span>
@@ -240,20 +240,16 @@ export default function Home() {
         <div className="cs-section__bento">
           <MagicBento
             cards={bentoCards}
-            onCardClick={slug => {
-              const cs = caseStudies.find(c => c.slug === slug)
-              if (cs?.externalUrl) window.open(cs.externalUrl, '_blank', 'noopener,noreferrer')
-              else navigate(`/works/${slug}`)
-            }}
-            enableStars={true}
-            enableSpotlight={true}
-            enableBorderGlow={true}
+            onCardClick={slug => navigate(`/works/${slug}`)}
+            enableStars={false}
+            enableSpotlight={false}
+            enableBorderGlow={false}
             enableTilt={false}
-            enableMagnetism={true}
-            clickEffect={true}
+            enableMagnetism={false}
+            clickEffect={false}
             glowColor="61, 90, 128"
-            particleCount={10}
-            spotlightRadius={280}
+            particleCount={0}
+            spotlightRadius={0}
           />
         </div>
       </section>

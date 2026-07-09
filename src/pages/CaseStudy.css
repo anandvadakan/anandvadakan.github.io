@@ -216,6 +216,27 @@
   line-height: 1.7;
 }
 
+/* Medium link */
+.cs__medium-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1.5px solid;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  width: fit-content;
+  transition: opacity 0.2s, transform 0.18s;
+  margin-top: 0.5rem;
+}
+
+.cs__medium-link:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
 /* Notion link */
 .cs__notion-link {
   display: inline-flex;
