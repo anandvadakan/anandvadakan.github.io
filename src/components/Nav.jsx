@@ -25,13 +25,15 @@ export default function Nav() {
       : location.pathname.startsWith(item.href)
   )?.href
 
+  const visibleItems = NAV_ITEMS.filter(item => item.href !== activeHref)
+
   return (
     <>
       <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
         <a href="/" className="nav__brand"></a>
       </header>
       <PillNav
-        items={NAV_ITEMS}
+        items={visibleItems}
         activeHref={activeHref}
         baseColor="#18160f"
         pillColor="#f97316"
