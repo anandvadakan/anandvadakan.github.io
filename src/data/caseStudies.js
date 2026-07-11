@@ -6,8 +6,8 @@ export const caseStudies = [
     subtitle: 'Transforming food delivery order cancellations from a cost into a structured recovery engine',
     externalUrl: 'https://medium.com/@anandvadakan2000/f430bd47247f',
     summary: 'Food delivery platforms treat cancellations as a cost of doing business. This system design turns them into a revenue recovery opportunity - addressing decision friction, dead inventory, and the binary refund policy that satisfies no one.',
-    accentColor: '#2d6a4f',
-    tagColor: '#d8f3dc',
+    accentColor: '#c2410c',
+    tagColor: 'rgba(249, 115, 22, 0.15)',
     problem: 'When a customer cancels an order on a food delivery platform, the platform absorbs the cost - refund issued, restaurant partially compensated, delivery partner paid nothing. The current cancellation flow is binary: either the order goes through or it is fully cancelled. There is no middle state that recovers value from a near-complete transaction. This creates three compounding losses: the customer gets a full refund regardless of how far along the order was, the restaurant has already begun preparation and receives partial payment at best, and dead inventory (prepared food that goes to waste) is never addressed. The platform has no mechanism to convert a cancellation signal into any form of retained revenue.',
     approach: [
       'Map the cancellation funnel by stage - pre-acceptance, post-acceptance pre-prep, mid-prep, and ready-for-pickup - to understand where in the order lifecycle cancellations cluster and what value exists at each stage',
